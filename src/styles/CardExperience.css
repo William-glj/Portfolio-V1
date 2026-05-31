@@ -1,0 +1,109 @@
+/* ==========================================================================
+   1. CONTENEDOR PRINCIPAL DE LA TARJETA DE EXPERIENCIA
+   ========================================================================== */
+.cardExperience-firstContainer {
+    background-color: #1e293b; /* Gris azulado oscuro oficial */
+    border: 1px solid #334155; /* Borde suave de profundidad */
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 0 auto 2rem auto;  /* Centrado en la página con margen inferior */
+    max-width: 850px;
+    width: 100%;
+    box-sizing: border-box;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+/* Efecto hover interactivo */
+.cardExperience-firstContainer:hover {
+    transform: translateY(-4px);
+    border-color: #ef4444; /* Tu rojo de acento brilla al pasar el ratón */
+    box-shadow: 0 12px 30px rgba(239, 68, 68, 0.1);
+}
+
+/* ==========================================================================
+   2. CABECERA DE LA TARJETA (Empresa, Periodo y Puesto)
+   ========================================================================== */
+.secondClassCube {
+    display: grid;
+    grid-template-columns: 1fr; /* Estructura vertical para móviles */
+    gap: 0.5rem;
+    border-bottom: 2px solid #334155; /* Línea divisoria interna */
+    padding-bottom: 1.25rem;
+}
+
+/* Título de la Empresa */
+.secondClassCube h2 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Periodo / Fechas (la etiqueta span) */
+.experience-date {
+    font-size: 0.95rem;
+    color: #ef4444; /* Rojo acento para destacar las fechas */
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+/* Puesto ocupado (la etiqueta h3) */
+.secondClassCube h3 {
+    font-size: 1.15rem;
+    color: #94a3b8; /* Gris plata suave */
+    font-weight: 500;
+    margin: 0;
+    grid-column: 1 / -1; /* Toma todo el ancho disponible */
+}
+
+/* ==========================================================================
+   3. LISTA DE LOGROS / TAREAS (Bullets)
+   ========================================================================== */
+.cardExperience-firstContainer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem; 
+}
+
+.cardExperience-firstContainer li {
+    font-size: 1rem;
+    color: #cbd5e1; /* Texto claro de alta legibilidad sobre fondo oscuro */
+    line-height: 1.6;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+/* Viñeta o marcador personalizado al estilo consola/backend */
+.cardExperience-firstContainer li::before {
+    content: "▹"; /* Flecha minimalista */
+    position: absolute;
+    left: 0;
+    color: #ef4444; /* Color rojo de acento a juego */
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   4. RESPONSIVE DESIGN (Para tablets y computadoras)
+   ========================================================================== */
+@media (min-width: 600px) {
+    .secondClassCube {
+        grid-template-columns: auto 1fr; /* Separa Empresa (Izquierda) y Fechas (Derecha) */
+        align-items: center;
+    }
+
+    /* Empuja las fechas hacia el extremo derecho en PC */
+    .experience-date {
+        justify-content: flex-end;
+        text-align: right;
+    }
+}

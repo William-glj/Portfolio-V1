@@ -1,0 +1,16 @@
+/* ==========================================================================
+   CONTENEDOR DE LAS TARJETAS (Alineación horizontal de lado a lado)
+   ========================================================================== */
+.skills-container {
+    display: flex;
+    flex-direction: row;        /* Coloca las tarjetas una al lado de la otra */
+    flex-wrap: wrap;            /* Permite que bajen ordenadamente si no caben en pantalla */
+    justify-content: center;    /* Centra todo el grupo de tarjetas en la página */
+    align-items: flex-start;    /* Alineación superior por si varían en altura */
+    gap: 2rem;                  /* Espaciado uniforme entre cada tarjeta */
+    width: 100%;
+    max-width: 1200px;          /* Evita que se estiren demasiado en pantallas gigantes */
+    margin: 0 auto;             /* Centra el bloque entero horizontalmente */
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}

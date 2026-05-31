@@ -1,0 +1,57 @@
+/* Contenedor principal de los iconos de contacto */
+.contact-container {
+    display: flex;
+    justify-content: center; /* Centra los iconos horizontalmente */
+    align-items: center;
+    gap: 2rem; /* Espacio entre cada icono */
+    padding: 3rem 1.5rem;
+    max-width: 600px;
+    margin: 0 auto; /* Centra el bloque en la página */
+}
+
+/* Estilo para los enlaces de los iconos */
+.contact-container a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease; /* Animación suave al pasar el ratón */
+}
+
+/* Control del tamaño y aspecto de las imágenes/iconos */
+.contact-container img {
+    width: 45px;  /* Tamaño ideal para que se vean nítidos pero elegantes */
+    height: 45px;
+    object-fit: contain;
+    filter: grayscale(20%); /* Opción: un toque sutil de gris por defecto */
+    opacity: 0.8; /* Ligeramente transparentes para no saturar */
+    transition: all 0.3s ease;
+}
+
+/* --- EFECTOS HOVER (Interactividad) --- */
+
+/* Cuando pasas el ratón sobre el enlace, el icono se agranda */
+.contact-container a:hover {
+    transform: translateY(-5px); /* Pequeño salto hacia arriba */
+}
+
+/* El icono recupera todo su color y brillo al hacer hover */
+.contact-container a:hover img {
+    opacity: 1;
+    filter: grayscale(0%);
+    /* Opcional: añade una sombra sutil de color si quieres que resalten más */
+    drop-shadow: 0px 4px 10px rgba(0, 118, 255, 0.2); 
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 480px) {
+    .contact-container {
+        gap: 1.5rem; /* Reduce un poco el espacio en pantallas móviles */
+        padding: 2rem 1rem;
+    }
+    
+    .contact-container img {
+        width: 40px; /* Un pelín más pequeños en móvil */
+        height: 40px;
+    }
+}

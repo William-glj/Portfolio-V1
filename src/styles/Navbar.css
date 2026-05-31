@@ -1,0 +1,73 @@
+/* Estilos generales para evitar que el contenido se oculte detrás del menú fijo 
+body {
+  margin: 0;
+  padding-top: 100px; /* Ajusta este valor para que coincida con la altura del navbar 
+  background-color: #0b0f19; /* Mantenemos el fondo oscuro de tu portafolio 
+  color: #ffffff;
+}
+  */
+
+/* Configuración del contenedor principal del menú */
+nav {
+  position: fixed;            /* Lo clava en la parte superior de la pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;                /* Ocupa todo el ancho horizontal */
+  height: 65px;              /* Altura de 130px dentro del rango solicitado */
+  background-color: #0b0f19; 
+  
+  display: flex;
+  flex-direction: row;        /* Alinea los elementos horizontalmente */
+  align-items: center;        /* Centra el logo y los enlaces verticalmente */
+  justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
+  
+  padding: 0 4rem;            /* Margen interno a los lados */
+  box-sizing: border-box;     /* Evita que el padding rompa el ancho del 100% */
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.1); /* Borde mínimo translúcido */
+  z-index: 1000;              /* Asegura que el menú flote por encima de todo */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;         /* Un poco de espacio debajo para que no se vea tan pegado al borde */
+}
+
+/* Logotipo */
+.navTitle {
+  color: #ef4444;             /* Texto principal "Dev" empieza en Rojo */
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.4s ease; /* Transición suave para el cambio de color */
+}
+
+.navTitle span {
+  color: #ffffff;             /* El span "Portfolio." empieza en Blanco */
+  transition: color 0.4s ease; /* Transición suave independiente para el span */
+}
+
+/* Al pasar el cursor por encima de cualquier parte del logo (.navTitle) */
+.navTitle:hover {
+  color: #ffffff;             /* "Dev" cambia de Rojo a Blanco */
+}
+
+.navTitle:hover span {
+  color: #ef4444;             /* "Portfolio." cambia de Blanco a Rojo al mismo tiempo */
+}
+
+
+.classMenu {
+  display: flex;
+  gap: 2rem; 
+}
+
+
+.classMenu a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.4s ease; 
+}
+
+
+.classMenu a:hover {
+  color: #ef4444; 
+}
+
