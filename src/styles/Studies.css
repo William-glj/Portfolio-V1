@@ -1,0 +1,134 @@
+/* ==========================================================================
+   NUEVA DISTRIBUCIÓN HORIZONTAL Y REJILLA (GRID)
+   ========================================================================== */
+
+/* Contenedor general de la sección */
+.studies-main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Títulos de sección internos */
+.section-subtitle {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    border-left: 4px solid #ef4444; /* Línea de acento roja a la izquierda */
+    padding-left: 0.75rem;
+}
+
+/* Envoltura para las dos columnas (Estudios vs Certificados) */
+.studies-columns-wrapper {
+    display: grid;
+    grid-template-columns: 1fr; /* Por defecto en móvil se apilan uno abajo del otro */
+    gap: 2rem;
+    margin-bottom: 3.5rem;
+}
+
+/* Estilos específicos para cada columna contenedora */
+.studies-column, .certificates-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem; /* Reduce el espacio muerto vertical entre tarjetas */
+}
+
+/* Rejilla adaptativa para las tarjetas de proyectos (ProjectCard) */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+/* Ajustes a tus selectores previos para mejorar la visualización en columnas */
+.cardExperience-firstContainer {
+    margin: 0 0 1rem 0 !important; /* Reseteamos los márgenes fijos previos */
+    max-width: 100% !important;   /* Permitimos que se adapten al ancho de su columna */
+}
+
+.cardProject-firstContainer {
+    margin: 0 !important;          /* Quitamos el margin auto que centraba las tarjetas solas */
+    max-width: 100% !important;   /* El ancho ahora lo controla de forma fluida el componente padre (.projects-grid) */
+}
+
+/* Incrementamos el ancho máximo de la sección principal para que todo el portfolio sea más inmersivo */
+.studies-main-container {
+    max-width: 1400px; /* Cambiado de 1200px a 1400px para que todo sea más largo */
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Nuevo contenedor de estudios al 100% de ancho */
+.studies-full-width-section {
+    width: 100%;
+    margin-bottom: 3.5rem;
+}
+
+/* Apilador vertical para las tarjetas de estudios */
+.studies-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem; /* Separación limpia entre una tarjeta y otra */
+    width: 100%;
+}
+
+/* Aseguramos que la tarjeta de experiencia rompa cualquier límite y se expanda por completo */
+.studies-stack .cardExperience-firstContainer {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+}
+@media (min-width: 900px) {
+    .studies-columns-wrapper {
+        /* La columna de estudios será 3 veces más ancha que la de certificados */
+        grid-template-columns: 3fr 1fr; 
+        align-items: start;
+        gap: 2rem;
+    }
+}
+
+/* ==========================================================================
+   EFECTO EXPANSIÓN DE IMAGEN EN HOVER
+   ========================================================================== */
+
+/* Aseguramos que el contenedor de la imagen tenga una transición suave y posición relativa */
+.containerIMG {
+    position: relative;
+    width: 100%;
+    height: 180px;            /* Mantiene la simetría original */
+    background-color: #0f172a; 
+    border-radius: 8px;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+    z-index: 1;               /* Capa por defecto */
+}
+
+/* Al pasar el ratón sobre la imagen o sobre su contenedor, se expande por encima */
+.containerIMG:hover {
+    transform: scale(1.25);   /* Se alarga y expande un 25% más grande */
+    z-index: 10;              /* Se posiciona por encima de los textos y títulos de la tarjeta */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Sombra intensa para dar efecto de flotación */
+}
+
+/* Ajuste fino para la imagen interna */
+.containerIMG img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;       /* Mantiene las esquinas suavizadas al crecer */
+    transition: transform 0.3s ease;
+}
+
+/* MODIFICACIÓN IMPORTANTE: Permitir que la imagen sobresalga de la tarjeta */
+.cardProject-firstContainer {
+    /* ... Tus estilos anteriores se mantienen igual ... */
+    overflow: visible !important; /* Cambiado de hidden a visible para que la foto pueda salir de los márgenes */
+}
+
+/* Desactivamos el zoom interno anterior para que no interfiera con la expansión total */
+.cardProject-firstContainer:hover .containerIMG img {
+    transform: scale(1); 
+}

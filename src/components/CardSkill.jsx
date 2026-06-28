@@ -1,5 +1,6 @@
 import "../styles/CardSkill.css";
 
+
 function CardSkill(props) {
     return (
      

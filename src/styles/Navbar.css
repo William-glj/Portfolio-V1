@@ -30,12 +30,16 @@ nav {
 
 /* Logotipo */
 .navTitle {
-  color: #ef4444;             /* Texto principal "Dev" empieza en Rojo */
+  color: #ef4444;             
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
-  transition: color 0.4s ease; /* Transición suave para el cambio de color */
+  transition: color 0.4s ease;
+   user-select: none; 
+  -webkit-user-select: none; 
+  cursor: default;  
 }
+
 
 .navTitle span {
   color: #ffffff;             /* El span "Portfolio." empieza en Blanco */

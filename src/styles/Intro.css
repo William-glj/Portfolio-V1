@@ -1,206 +1,332 @@
-/* ==========================================
-   ESTILOS CONTENEDOR PRINCIPAL (INTRO - BLOQUE BLANCO)
-   ========================================== */
-/* ==========================================
-   ESTILOS CONTENEDOR PRINCIPAL (INTRO - BLOQUE BLANCO)
-   ========================================== */
+/* ==========================================================================
+   1. CONTENEDOR GENERAL DE LA SECCIÓN DE INICIO
+   ========================================================================== */
 .intro-container {
-  width: 100%;
-  min-height: 100vh;
-  background-color: #0b0f19; /* Mantiene los laterales oscuros */
-  
-  /* CORRECCIÓN DE DESPEGUE CRUCIAL:
-     Damos un padding-top real. Si tu Navbar mide 100px, 
-     ponemos 160px para que queden 60px limpios de separación */
-  padding-top: 160px;        
-  padding-bottom: 4rem;
-  
-  display: flex;
-  justify-content: center;   /* Centra la tarjeta blanca de forma horizontal */
-  
-  /* CAMBIO CLAVE: Cambiamos 'center' por 'flex-start' para que la tarjeta 
-     se posicione arriba y respete el padding superior en vez de flotar al medio */
-  align-items: flex-start;   
-  box-sizing: border-box;
+    width: 100%;
+    min-height: auto; 
+    height: auto;
+    background-color: #0b0f19; 
+    padding-top: 140px;        
+    padding-bottom: 60px;      
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
 }
 
-.intro-card {
-  max-width: 1250px;         
-  width: 90%;                
-  background-color: #ffffff; 
-  color: #0b0f19;            
-  border-radius: 16px;       
-  padding: 3.5rem 3rem;      
-  box-sizing: border-box;
-  
-  display: flex;
-  flex-direction: column;    
-  align-items: center;       
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); 
+.intro-wrapper {
+    max-width: 1400px;
+    width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
 }
-/* ==========================================
-   ESFERA DE PERFIL DE LA IMAGEN
-   ========================================== */
+
+.section-subtitle {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    border-left: 4px solid #ef4444; 
+    padding-left: 0.75rem;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* ==========================================================================
+   2. ADAPTACIÓN DE LA TARJETA AL ESTILO CARD-EXPERIENCE
+   ========================================================================== */
+.intro-card.cardExperience-firstContainer {
+    margin: 0; 
+    max-width: 100% !important; 
+    padding: 3rem;
+}
+
+/* ==========================================================================
+   3. DISTRIBUCIÓN INTERNA INTERMEDIA (IMAGEN + TEXTO)
+   ========================================================================== */
+.spacer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    border-bottom: 2px solid #334155; 
+    padding-bottom: 2rem;
+    margin-bottom: 1.5rem;
+}
+
 .profileDiv {
-  margin-bottom: 3rem;       /* Separación con la fila de abajo */
+    display: flex;
+    justify-content: center;
 }
 
 #Profile {
-  width: 150px;              
-  height: 150px;             
-  border-radius: 50%;        
-  object-fit: cover;         
-  border: 2px solid #ef4444; 
-  box-shadow: 0 0 20px rgba(239, 68, 68, 0.2); 
-  transition: all 0.3s ease; 
+    width: 150px;              
+    height: 150px;             
+    border-radius: 50%;        
+    object-fit: cover;         
+    border: 2px solid #ef4444; 
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.2); 
+    transition: all 0.3s ease; 
 }
 
 #Profile:hover {
-  box-shadow: 0 0 30px rgba(239, 68, 68, 0.4); 
-  transform: scale(1.05);   
+    box-shadow: 0 0 30px rgba(239, 68, 68, 0.4); 
+    transform: scale(1.05);   
 }
 
-/* ==========================================
-   ALINEACIÓN EN LA MISMA LÍNEA (TEXTO + CONSOLA)
-   ========================================== */
-.spacer {
-  display: flex;
-  flex-direction: row;       /* Fuerza a que el texto y la consola vayan en la misma línea */
-  align-items: center;       /* Los alinea perfectamente en el centro vertical */
-  justify-content: space-between; /* Deja espacio proporcional entre ambos */
-  gap: 3rem;                 /* Separación horizontal entre el texto y la terminal */
-  width: 100%;
-}
-
-/* ==========================================
-   SECCIÓN DE TEXTOS INDIVIDUALES
-   ========================================== */
 .textDiv {
-  flex: 1;                   /* Ocupa la mitad del espacio disponible de la fila */
-  max-width: 450px;          
-  text-align: left;          /* Alineación a la izquierda muy limpia */
+    width: 100%;
+    text-align: center;          
 }
 
 .textDiv h1 {
-  font-size: 2.6rem;
-  font-weight: 800;
-  color: #0b0f19;            /* Título en color oscuro */
-  margin: 0 0 0.5rem 0;
-  font-family: 'Segoe UI', sans-serif;
-  letter-spacing: -0.025em;
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #ffffff;            
+    margin: 0 0 0.5rem 0;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .textDiv h4 {
-  font-size: 1.1rem;
-  color: #64748b;            /* Color gris slate intermedio para tu nombre */
-  font-weight: 500;
-  margin: 0 0 1.5rem 0;
-  font-family: monospace;    
+    font-size: 1.15rem;
+    color: #94a3b8; 
+    font-weight: 500;
+    margin: 0 0 1.5rem 0;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .intro-description {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #334155;            /* Gris oscuro para que el párrafo se lea perfecto sobre blanco */
-  margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #cbd5e1; 
+    margin: 0;
 }
 
-/* ==========================================
-   SECCIÓN DE LA CONSOLA
-   ========================================== */
-.consoleDiv {
-  flex: 1;                   /* Ocupa la otra mitad de la fila */
-  display: flex;
-  justify-content: flex-end; /* Empuja la terminal hacia la derecha de la fila */
-  width: 100%;
+/* ==========================================================================
+   4. CLON EXACTO DE LA CAJA DE CONTACTO PARA EL TECH STACK
+   ========================================================================== */
+.stack-section {
+    flex: 1;
 }
 
-/* DISEÑO DE LA CONSOLA INTERACTIVA (MANTIENE SU LOOK OSCURO CYBER) */
-.terminal-card {
-  width: 100%;
-  max-width: 420px;          
-  background-color: #1e293b; /* Fondo gris/azul oscuro para que resalte sobre el contenedor blanco */
-  border: 1px solid #334155;  
-  border-radius: 1rem;        
-  padding: 1.5rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); /* Sombra suave para darle relieve sobre el fondo blanco */
-  box-sizing: border-box;
+.stack-section h3 {
+    font-size: 1.25rem;
+    color: #ffffff;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
-.terminal-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #334155; 
-  padding-bottom: 0.75rem;
-  margin-bottom: 1rem;
-}
-
-.terminal-buttons {
-  display: flex;
-  gap: 0.4rem;
-}
-
-.terminal-buttons span {
-  width: 0.75rem;
-  height: 0.75rem;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.btn-red { background-color: rgba(239, 68, 68, 0.8); }     
-.btn-yellow { background-color: rgba(234, 179, 8, 0.8); }  
-.btn-green { background-color: rgba(34, 197, 94, 0.8); }   
-
-.terminal-title {
-  font-family: monospace;
-  font-size: 0.75rem;
-  color: #94a3b8;
-}
-
-.terminal-body {
-  font-family: monospace;
-  font-size: 0.85rem;      
-  text-align: left;         
-  line-height: 1.6;
-}
-
-.terminal-command {
-  color: #94a3b8;           
-  margin: 0 0 0.5rem 0;
-}
-
-.terminal-response {
-  margin: 0 0 1rem 0;       
-  font-weight: 500;
-}
-
-.text-cyan { color: #22d3ee; }
-.text-indigo { color: #818cf8; }
-
-.cursor-blink {
-  color: #94a3b8;
-  margin: 0;
-  animation: blink 1.2s infinite step-end;
-}
-
-@keyframes blink {
-  from, to { color: transparent }
-  50% { color: #94a3b8; }
-}
-
-/* ==========================================
-   RESPONSIVE (Alineación móvil)
-   ========================================== */
-@media (max-width: 900px) {
-  .spacer {
-    flex-direction: column;  /* En móviles rompe la fila y pone la consola abajo */
-    gap: 3rem;
-  }
-  .textDiv {
-    text-align: center;      /* Centra los textos en pantallas pequeñas */
-  }
-  .consoleDiv {
+/* Idéntico a .contact-container */
+.stack-horizontal-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-  }
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 2rem;
+    background-color: #1e293b; /* Fondo azul oscuro de tus contactos */
+    border: 1px solid #334155;
+    border-radius: 12px;
+    max-width: fit-content;
+}
+
+/* Idéntico a los botones .contact-container a */
+.stack-horizontal-box p {
+    margin: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.6rem 1.4rem;
+    height: 48px; /* Altura alineada con tus botones circulares */
+    box-sizing: border-box;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #cbd5e1;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    
+    background-color: #0f172a; /* Fondo ultra oscuro contrastante */
+    border: 1px solid #334155;
+    border-radius: 24px; /* Formato píldora ovalada perfecta */
+    
+    cursor: default;
+    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover idéntico a tus enlaces de contacto con elevación -4px y brillo */
+.stack-horizontal-box p:hover {
+    transform: translateY(-4px);
+    border-color: #ef4444; /* Rojo de acento */
+    background-color: #1e293b;
+    color: #ffffff;
+    box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
+}
+
+/* ==========================================================================
+   5. DISTRIBUCIÓN HORIZONTAL (ESTADO INFERIOR)
+   ========================================================================== */
+.intro-footer-row {
+    display: flex;
+    flex-direction: column; 
+    gap: 2rem;
+    width: 100%;
+    align-items: center; /* Alinea los bloques al centro en dispositivos móviles */
+}
+
+.intro-footer-row .contact-section-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+}
+
+/* ==========================================================================
+   6. RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================================================== */
+@media (min-width: 768px) {
+    .spacer {
+        flex-direction: row; 
+        align-items: flex-start;
+        text-align: left;
+        gap: 3rem;
+    }
+
+    .textDiv {
+        text-align: left;
+    }
+}
+
+@media (min-width: 950px) {
+    .intro-footer-row {
+        flex-direction: row; 
+        justify-content: space-between; 
+        align-items: flex-end; /* Nivelados perfectamente por la base */
+        gap: 2rem;
+    }
+
+    .stack-horizontal-box {
+        justify-content: flex-start; /* En PC se expande fluido hacia la derecha */
+        margin: 0;
+    }
+
+    .intro-footer-row .contact-section-wrapper {
+        width: auto; 
+        justify-content: flex-end;
+    }
+}
+
+/* ==========================================================================
+   4. CLON EXACTO DE LA CAJA DE CONTACTO PARA EL TECH STACK
+   ========================================================================== */
+.footer-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-block h3 {
+    font-size: 1.25rem;
+    color: #ffffff;
+    font-weight: 600;
+    margin: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Caja contenedora del Stack (Clon exacto de .contact-container) */
+.stack-horizontal-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;            /* Padding exacto para igualar la caja de contactos */
+    background-color: #1e293b; /* Mismo fondo gris azulado intermedio */
+    border: 1px solid #334155;
+    border-radius: 12px;
+    height: 114px;            /* Forzamos la misma altura exacta que hereda Contact */
+    box-sizing: border-box;
+}
+
+/* Píldoras del Stack (Estilo botones redondos de contacto) */
+.stack-horizontal-box p {
+    margin: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.4rem;
+    height: 48px;             /* Altura de botón idéntica */
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #cbd5e1;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    
+    background-color: #0f172a; /* Fondo ultra oscuro contrastante */
+    border: 1px solid #334155;
+    border-radius: 24px;       /* Píldora ovalada perfecta */
+    
+    cursor: default;
+    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover con elevación de -4px e iluminación roja idéntica */
+.stack-horizontal-box p:hover {
+    transform: translateY(-4px);
+    border-color: #ef4444; 
+    background-color: #1e293b;
+    color: #ffffff;
+    box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
+}
+
+/* ==========================================================================
+   5. DISTRIBUCIÓN HORIZONTAL Y SIMETRÍA (ESTADO INFERIOR)
+   ========================================================================== */
+.intro-footer-row {
+    display: flex;
+    flex-direction: column; 
+    gap: 2.5rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* Sobrescribimos el margen automático que pudiera traer el componente Contact original */
+.intro-footer-row .contact-container {
+    margin: 0 !important;
+    padding: 2rem !important; /* Asegura coincidencia absoluta */
+    height: 114px !important;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================================================== */
+@media (min-width: 768px) {
+    .spacer {
+        flex-direction: row; 
+        align-items: flex-start;
+        text-align: left;
+        gap: 3rem;
+    }
+
+    .textDiv {
+        text-align: left;
+    }
+}
+
+@media (min-width: 950px) {
+    .intro-footer-row {
+        flex-direction: row; 
+        justify-content: space-between; 
+        align-items: flex-end; /* Clave: amarra ambos títulos y cajas a la misma línea base */
+        gap: 2rem;
+    }
+
+    .footer-block {
+        flex: 1;
+    }
+    
+    /* El bloque de contacto se ajusta a su propio contenido a la derecha */
+    .intro-footer-row .footer-block:last-child {
+        flex: initial;
+        align-items: flex-start;
+    }
 }

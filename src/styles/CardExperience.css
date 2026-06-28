@@ -92,18 +92,93 @@
     font-weight: bold;
 }
 
+
 /* ==========================================================================
    4. RESPONSIVE DESIGN (Para tablets y computadoras)
    ========================================================================== */
-@media (min-width: 600px) {
-    .secondClassCube {
-        grid-template-columns: auto 1fr; /* Separa Empresa (Izquierda) y Fechas (Derecha) */
-        align-items: center;
+/* ==========================================================================
+   AJUSTES PARA IGUALAR ALTURAS EN LA SECCIÓN EXPERIENCIA
+   ========================================================================== */
+
+@media (min-width: 900px) {
+    /* Forzamos a que las dos columnas de experiencia midan 50% y 50% de ancho */
+    .experience-equal-height {
+        grid-template-columns: 1fr 1fr !important; 
+    }
+    
+    /* Hace que los contenedores de las columnas se estiren uniformemente */
+    .experience-equal-height .studies-column {
+        height: 100%;
     }
 
-    /* Empuja las fechas hacia el extremo derecho en PC */
-    .experience-date {
-        justify-content: flex-end;
-        text-align: right;
+    /* Obliga a la tarjeta de experiencia a ocupar todo el alto disponible de su columna */
+    .experience-equal-height .cardExperience-firstContainer {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+    
+    /* Permite que la lista de bullets crezca para empujar el contenido si una tarjeta tiene menos texto */
+    .experience-equal-height .cardExperience-firstContainer ul {
+        flex-grow: 1;
+    }
+}
+
+/* ==========================================================================
+   2. CABECERA DE LA TARJETA (Empresa, Periodo y Puesto)
+   ========================================================================== */
+.secondClassCube {
+    display: flex;
+    flex-direction: column; /* Diseño en vertical por defecto para móviles */
+    gap: 0.5rem;
+    border-bottom: 2px solid #334155; /* Línea divisoria interna */
+    padding-bottom: 1.25rem;
+}
+
+/* Contenedor interno invisible para forzar la alineación del título y la fecha */
+.secondClassCube-header-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+/* Título de la Empresa / Estudio */
+.secondClassCube h2 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Periodo / Fechas */
+.experience-date {
+    font-size: 0.95rem;
+    color: #ef4444; /* Rojo acento */
+    font-weight: 600;
+    white-space: nowrap; /* Evita que la fecha se rompa en dos líneas */
+}
+
+/* Puesto ocupado (solo visible en Experiencia laboral) */
+.secondClassCube h3 {
+    font-size: 1.15rem;
+    color: #94a3b8; /* Gris plata suave */
+    font-weight: 500;
+    margin: 0;
+    width: 100%;
+}
+
+/* ==========================================================================
+   4. RESPONSIVE DESIGN (Para tablets y computadoras)
+   ========================================================================== */
+@media (min-width: 768px) {
+    /* En pantallas grandes, forzamos que título y fecha vayan en la misma fila */
+    .secondClassCube-header-row {
+        flex-direction: row;
+        align-items: center; /* Alineación perfecta al centro horizontal */
+        gap: 1.5rem;
     }
 }
