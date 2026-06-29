@@ -3,7 +3,6 @@
     border: 1px solid #334155; 
     border-radius: 16px;
     padding: 2rem;
-    width: 100%;
     max-width: 350px; 
     box-sizing: border-box;
     margin: 1.5rem auto; 
@@ -17,7 +16,7 @@
 .cardSkill-firstContainer:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(239, 68, 68, 0.15); 
-    border-color: #ef4444;                          
+    border-color: #ef4444;                                   
 }
 
 .secondClassCube {

@@ -1,9 +1,5 @@
-/* ==========================================================================
-   1. CONTENEDOR GENERAL DE LA SECCIÓN DE INICIO
-   ========================================================================== */
 .intro-container {
     width: 100%;
-    min-height: auto; 
     height: auto;
     background-color: #0b0f19; 
     padding-top: 140px;        
@@ -30,18 +26,12 @@
     font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
-/* ==========================================================================
-   2. ADAPTACIÓN DE LA TARJETA AL ESTILO CARD-EXPERIENCE
-   ========================================================================== */
 .intro-card.cardExperience-firstContainer {
     margin: 0; 
     max-width: 100% !important; 
     padding: 3rem;
 }
 
-/* ==========================================================================
-   3. DISTRIBUCIÓN INTERNA INTERMEDIA (IMAGEN + TEXTO)
-   ========================================================================== */
 .spacer {
     display: flex;
     flex-direction: column;
@@ -60,7 +50,7 @@
 
 #Profile {
     width: 150px;              
-    height: 150px;             
+    height: 150px;              
     border-radius: 50%;        
     object-fit: cover;         
     border: 2px solid #ef4444; 
@@ -101,9 +91,6 @@
     margin: 0;
 }
 
-/* ==========================================================================
-   4. CLON EXACTO DE LA CAJA DE CONTACTO PARA EL TECH STACK
-   ========================================================================== */
 .stack-section {
     flex: 1;
 }
@@ -116,107 +103,6 @@
     font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
-/* Idéntico a .contact-container */
-.stack-horizontal-box {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.5rem 2rem;
-    background-color: #1e293b; /* Fondo azul oscuro de tus contactos */
-    border: 1px solid #334155;
-    border-radius: 12px;
-    max-width: fit-content;
-}
-
-/* Idéntico a los botones .contact-container a */
-.stack-horizontal-box p {
-    margin: 0;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.6rem 1.4rem;
-    height: 48px; /* Altura alineada con tus botones circulares */
-    box-sizing: border-box;
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #cbd5e1;
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    
-    background-color: #0f172a; /* Fondo ultra oscuro contrastante */
-    border: 1px solid #334155;
-    border-radius: 24px; /* Formato píldora ovalada perfecta */
-    
-    cursor: default;
-    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover idéntico a tus enlaces de contacto con elevación -4px y brillo */
-.stack-horizontal-box p:hover {
-    transform: translateY(-4px);
-    border-color: #ef4444; /* Rojo de acento */
-    background-color: #1e293b;
-    color: #ffffff;
-    box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
-}
-
-/* ==========================================================================
-   5. DISTRIBUCIÓN HORIZONTAL (ESTADO INFERIOR)
-   ========================================================================== */
-.intro-footer-row {
-    display: flex;
-    flex-direction: column; 
-    gap: 2rem;
-    width: 100%;
-    align-items: center; /* Alinea los bloques al centro en dispositivos móviles */
-}
-
-.intro-footer-row .contact-section-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center; 
-}
-
-/* ==========================================================================
-   6. RESPONSIVE DESIGN (MEDIA QUERIES)
-   ========================================================================== */
-@media (min-width: 768px) {
-    .spacer {
-        flex-direction: row; 
-        align-items: flex-start;
-        text-align: left;
-        gap: 3rem;
-    }
-
-    .textDiv {
-        text-align: left;
-    }
-}
-
-@media (min-width: 950px) {
-    .intro-footer-row {
-        flex-direction: row; 
-        justify-content: space-between; 
-        align-items: flex-end; /* Nivelados perfectamente por la base */
-        gap: 2rem;
-    }
-
-    .stack-horizontal-box {
-        justify-content: flex-start; /* En PC se expande fluido hacia la derecha */
-        margin: 0;
-    }
-
-    .intro-footer-row .contact-section-wrapper {
-        width: auto; 
-        justify-content: flex-end;
-    }
-}
-
-/* ==========================================================================
-   4. CLON EXACTO DE LA CAJA DE CONTACTO PARA EL TECH STACK
-   ========================================================================== */
 .footer-block {
     display: flex;
     flex-direction: column;
@@ -231,7 +117,6 @@
     font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
-/* Caja contenedora del Stack (Clon exacto de .contact-container) */
 .stack-horizontal-box {
     display: flex;
     flex-direction: row;
@@ -239,36 +124,32 @@
     justify-content: center;
     align-items: center;
     gap: 1.5rem;
-    padding: 2rem;            /* Padding exacto para igualar la caja de contactos */
-    background-color: #1e293b; /* Mismo fondo gris azulado intermedio */
+    padding: 2rem;            
+    background-color: #1e293b; 
     border: 1px solid #334155;
     border-radius: 12px;
-    height: 114px;            /* Forzamos la misma altura exacta que hereda Contact */
+    height: 114px;            
     box-sizing: border-box;
 }
 
-/* Píldoras del Stack (Estilo botones redondos de contacto) */
 .stack-horizontal-box p {
     margin: 0;
     display: inline-flex;
     justify-content: center;
     align-items: center;
     padding: 0 1.4rem;
-    height: 48px;             /* Altura de botón idéntica */
+    height: 48px;              
     font-size: 0.95rem;
     font-weight: 600;
     color: #cbd5e1;
     font-family: 'Segoe UI', system-ui, sans-serif;
-    
-    background-color: #0f172a; /* Fondo ultra oscuro contrastante */
+    background-color: #0f172a; 
     border: 1px solid #334155;
-    border-radius: 24px;       /* Píldora ovalada perfecta */
-    
+    border-radius: 24px;       
     cursor: default;
     transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover con elevación de -4px e iluminación roja idéntica */
 .stack-horizontal-box p:hover {
     transform: translateY(-4px);
     border-color: #ef4444; 
@@ -277,9 +158,6 @@
     box-shadow: 0 5px 15px rgba(239, 68, 68, 0.3);
 }
 
-/* ==========================================================================
-   5. DISTRIBUCIÓN HORIZONTAL Y SIMETRÍA (ESTADO INFERIOR)
-   ========================================================================== */
 .intro-footer-row {
     display: flex;
     flex-direction: column; 
@@ -288,17 +166,19 @@
     margin-top: 1rem;
 }
 
-/* Sobrescribimos el margen automático que pudiera traer el componente Contact original */
 .intro-footer-row .contact-container {
     margin: 0 !important;
-    padding: 2rem !important; /* Asegura coincidencia absoluta */
+    padding: 2rem !important; 
     height: 114px !important;
     box-sizing: border-box;
 }
 
-/* ==========================================================================
-   6. RESPONSIVE DESIGN (MEDIA QUERIES)
-   ========================================================================== */
+.intro-footer-row .contact-section-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+}
+
 @media (min-width: 768px) {
     .spacer {
         flex-direction: row; 
@@ -316,15 +196,24 @@
     .intro-footer-row {
         flex-direction: row; 
         justify-content: space-between; 
-        align-items: flex-end; /* Clave: amarra ambos títulos y cajas a la misma línea base */
+        align-items: flex-end; 
         gap: 2rem;
+    }
+
+    .stack-horizontal-box {
+        justify-content: flex-start; 
+        margin: 0;
+    }
+
+    .intro-footer-row .contact-section-wrapper {
+        width: auto; 
+        justify-content: flex-end;
     }
 
     .footer-block {
         flex: 1;
     }
     
-    /* El bloque de contacto se ajusta a su propio contenido a la derecha */
     .intro-footer-row .footer-block:last-child {
         flex: initial;
         align-items: flex-start;

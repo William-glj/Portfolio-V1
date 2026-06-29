@@ -1,8 +1,3 @@
-/* ==========================================================================
-   SECCIÓN DE HABILIDADES (Estilo unificado e inmersivo)
-   ========================================================================== */
-
-/* Contenedor principal de la sección (Alineado con tus 1400px globales) */
 #Skills {
     max-width: 1400px; 
     margin: 0 auto;
@@ -11,46 +6,35 @@
     box-sizing: border-box;
 }
 
-/* Título de sección unificado */
 .section-subtitle {
     color: #ffffff;
     font-size: 1.5rem;
     margin-top: 0;
     margin-bottom: 2rem;
     font-weight: 600;
-    border-left: 4px solid #ef4444; /* Línea de acento roja a la izquierda */
+    border-left: 4px solid #ef4444; 
     padding-left: 0.75rem;
     text-align: left;
 }
 
-/* Rejilla adaptativa para las tarjetas (Mismo comportamiento que tus proyectos) */
 .skills-container {
     display: grid;
-    /* Ajusta el tamaño mínimo de la tarjeta a 280px y rellena las columnas de forma fluida */
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;                  /* Espaciado uniforme idéntico a tus proyectos */
+    gap: 1.5rem;                  
     justify-content: center;
-    width: 100%;
     box-sizing: border-box;
 }
 
-/* Ajuste fino para inyectar fluidez a tus componentes CardSkill */
 .skills-container > div, 
-.skills-container .cardSkill-firstContainer { /* Reemplaza con la clase real del contenedor de tu Card si tiene una */
-    margin: 0 !important;          /* Eliminamos márgenes fijos antiguos */
-    max-width: 100% !important;    /* El ancho lo hereda dinámicamente de la rejilla */
-    width: 100%;
+.skills-container .cardSkill-firstContainer { 
+    margin: 0 !important;          
+    max-width: 100% !important;    
 }
 
-/* ==========================================================================
-   EXTRA: OPTIMIZACIÓN DE ICONOS OSCUROS
-   ========================================================================== */
-/* Si notas que Server SQL, Postman o GitHub se pierden con tu fondo oscuro, 
-   puedes usar este filtro dentro de la tarjeta para darles visibilidad instantánea */
 .skills-container img {
     transition: transform 0.2s ease;
 }
 
 .skills-container img:hover {
-    transform: translateY(-3px); /* Pequeño salto interactivo al pasar el cursor sobre los iconos */
+    transform: translateY(-3px); 
 }

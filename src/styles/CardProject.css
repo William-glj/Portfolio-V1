@@ -1,35 +1,25 @@
-/* ==========================================================================
-   1. CONTENEDOR PRINCIPAL DE LA TARJETA DE PROYECTO / CERTIFICADO
-   ========================================================================== */
 .cardProject-firstContainer {
-    background-color: #1e293b; /* Gris azulado oscuro oficial */
-    border: 1px solid #334155; /* Borde suave de profundidad */
+    background-color: #1e293b;
+    border: 1px solid #334155;
     border-radius: 16px;
-    padding: 2rem;             /* Sincronizado con CardExperience */
-    width: 100%;
-    max-width: 360px;          /* Ancho máximo idóneo para cuadrículas compactas */
+    padding: 2rem;
+    max-width: 360px;
     box-sizing: border-box;
-    margin: 0 0 1.5rem 0 !important; /* Desactivamos el auto-centrado para alinear bien en Grid */
-    
+    margin: 0 0 1.5rem 0 !important;
     display: flex;
-    flex-direction: column;    
-    gap: 1.5rem;               /* Espaciado interno idéntico al resto de bloques del CV */
-    
+    flex-direction: column;
+    gap: 1.5rem;
     font-family: 'Segoe UI', system-ui, sans-serif;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease; /* Transiciones fluidas */
-    overflow: hidden;          /* Evita que los bordes de la imagen sobresalgan de las esquinas */
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    overflow: visible !important;
 }
 
-/* Efecto hover interactivo unificado */
 .cardProject-firstContainer:hover {
-    transform: translateY(-4px); /* Sincronizado a -4px con tu sección de Experiencia */
-    border-color: #ef4444;       /* Rojo de acento oficial que se ilumina */
+    transform: translateY(-4px);
+    border-color: #ef4444;
     box-shadow: 0 12px 30px rgba(239, 68, 68, 0.15); 
 }
 
-/* ==========================================================================
-   2. CABECERA DE LA TARJETA
-   ========================================================================== */
 .secondClassCube {
     text-align: left; 
     display: flex;
@@ -39,72 +29,72 @@
 
 .secondClassCube h2 {
     color: #ffffff;
-    font-size: 1.35rem;       /* Tamaño del título equilibrado */
+    font-size: 1.35rem;
     font-weight: 600;
     margin: 0;
 }
 
-/* ==========================================================================
-   3. CONTENEDOR EXCLUSIVO PARA LA IMAGEN DEL PROYECTO
-   ========================================================================== */
 .containerIMG {
+    position: relative;
     width: 100%;
-    height: 180px;            /* Altura fija idéntica para homogeneizar todas las tarjetas */
-    overflow: hidden;
-    border-radius: 8px;       /* Esquinas redondeadas para las previsualizaciones */
+    height: 180px;
+    overflow: visible;
+    border-radius: 8px;       
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #0f172a; /* Fondo ultra oscuro de contraste por si varía el aspect-ratio */
+    background-color: #0f172a;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 1;
 }
 
 .containerIMG img {
     width: 100%;
     height: 100%;
-    object-fit: cover;        /* Se adapta dinámicamente sin deformarse */
-    transition: transform 0.25s ease;
+    object-fit: contain;       
+    padding: 0.5rem;
+    border-radius: 8px;       
+    box-sizing: border-box;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
 }
 
-/* Efecto zoom controlado al pasar por cualquier zona de la tarjeta */
-.cardProject-firstContainer:hover .containerIMG img {
-    transform: scale(1.05);   
+.cardProject-firstContainer:hover .containerIMG {
+    z-index: 99;
 }
 
-/* ==========================================================================
-   4. CUERPO Y DESCRIPCIÓN DEL PROYECTO
-   ========================================================================== */
+.containerIMG:hover {
+    transform: scale(1.45);
+    box-shadow: 0 20px 38px rgba(0, 0, 0, 0.55);
+    background-color: #1e293b;
+}
+
 .containerDescription {
-    color: #94a3b8;           /* Gris plata suave */
+    color: #94a3b8;
     font-size: 0.95rem;
-    line-height: 1.6;         /* Sincronizada la legibilidad con Experience */
+    line-height: 1.6;
     margin: 0;
-    flex: 1;                  /* Estira el bloque de texto para empujar el footer hacia el fondo */
+    flex: 1;
 } 
 
-/* ==========================================================================
-   5. FOOTER DE LA TARJETA (ELEMENTOS DE ACCIÓN)
-   ========================================================================== */
 .cardProject-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    margin-top: auto;         /* Nivelación perfecta en caso de descripciones con líneas asimétricas */
+    margin-top: auto;
 }
 
-/* Contenedor circular estético para la flecha */
 .project-arrow-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     min-width: 36px;
     height: 36px;
-    background-color: #334155; /* Gris azulado intermedio */
+    background-color: #334155;
     border-radius: 50%;
     transition: background-color 0.25s ease;
 }
 
-/* El SVG de la flecha interactiva */
 .project-arrow {
     width: 18px;
     height: 18px;
@@ -112,30 +102,25 @@
     transition: transform 0.25s ease;
 }
 
-/* Animaciones al disparar el Hover de la tarjeta */
 .cardProject-firstContainer:hover .project-arrow {
-    transform: translateX(4px); /* Desplazamiento sutil a la derecha */
+    transform: translateX(4px);
 }
 
 .cardProject-firstContainer:hover .project-arrow-wrapper {
-    background-color: #ef4444;   /* El círculo pasa a ser rojo de acento */
+    background-color: #ef4444;
 }
 
-/* ==========================================================================
-   6. REJILLA CONTENEDORA ADAPTATIVA (SOLUCIÓN CONTRA ESTIRAMIENTOS)
-   ========================================================================== */
 .projects-grid-layout {
     display: flex;
-    flex-wrap: wrap;          /* Permite que salten de línea si no caben en pantalla */
-    gap: 1.5rem;              /* Separación homogénea entre tarjetas */
-    justify-content: flex-start; /* Alinea los elementos elegantemente a la izquierda */
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: flex-start;
     width: 100%;
-    max-width: 1400px;        /* Mismo tope visual del layout del portafolio */
+    max-width: 1400px;
     margin: 0 auto 2rem auto;
     box-sizing: border-box;
 }
 
-/* Subtítulos de sección (Portafolio, En proceso...) */
 .project-subtitle {
     color: #ffffff;
     font-size: 1.25rem;
@@ -144,59 +129,4 @@
     text-align: left;
     width: 100%;
     font-family: 'Segoe UI', system-ui, sans-serif;
-} 
-
-/* ==========================================================================
-   3. CONTENEDOR DE LA IMAGEN (MEJOR AJUSTE Y EFECTO HOVER MAX)
-   ========================================================================== */
-.containerIMG {
-    position: relative;
-    width: 100%;
-    height: 180px;             /* Mantiene la simetría de las cajas */
-    overflow: visible;         /* Crucial para permitir que la imagen se desborde al crecer */
-    border-radius: 8px;       
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #0f172a; /* Fondo oscuro por si la imagen tiene transparencias */
-    
-    /* Preparamos la animación del contenedor */
-    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-    z-index: 1;
-}
-
-.containerIMG img {
-    width: 100%;
-    height: 100%;
-    
-    /* CAMBIO CLAVE: "contain" hace que el certificado entero sea visible dentro del recuadro sin sufrir recortes */
-    object-fit: contain;       
-    
-    padding: 0.5rem;           /* Da un margen interno elegante para que no toque los bordes oscuros */
-    border-radius: 8px;       
-    box-sizing: border-box;
-    
-    /* Preparamos la animación específica de la imagen */
-    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
-}
-
-/* ==========================================================================
-   SUPER HOVER INTERACTIVO (CRECIMIENTO EXTREMO)
-   ========================================================================== */
-
-/* Cuando pasas el ratón sobre la TARJETA, aislamos el contenedor de la imagen para que vuele */
-.cardProject-firstContainer:hover .containerIMG {
-    z-index: 99;               /* Se posiciona por encima de absolutamente todo en la web */
-}
-
-/* Cuando pasas el ratón directamente sobre la IMAGEN, esta se expande de forma masiva */
-.containerIMG:hover {
-    transform: scale(1.45);    /* Incrementado a 1.45 para que se aprecie gigante y se lea el texto */
-    box-shadow: 0 20px 38px rgba(0, 0, 0, 0.55); /* Sombra muy profunda de aislamiento */
-    background-color: #1e293b; /* Cambia al fondo gris de la tarjeta para fusionarse mejor al flotar */
-}
-
-/* Aseguramos que la tarjeta contenedora no recierte el crecimiento */
-.cardProject-firstContainer {
-    overflow: visible !important; /* Obligatorio para que la imagen salga de la caja */
 }

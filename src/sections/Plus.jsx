@@ -1,25 +1,24 @@
-import React, { useState, useRef } from "react"; // Importamos useRef
+import React, { useState, useRef } from "react"; 
 
 function Plus() {
   const [value, setValue] = useState(false);
   
-  // Creamos una referencia que apuntará a nuestro div oculto
+  
   const contentRef = useRef(null);
 
   const handleClick = () => {
-    // 1. Cambiamos el estado (si estaba oculto, ahora se mostrará)
+   
     const nextValue = !value;
     setValue(nextValue);
 
-    // 2. Si se va a mostrar, esperamos un milisegundo a que React renderice el HTML
-    // y luego hacemos el scroll suave hacia él.
+   
     if (nextValue) {
       setTimeout(() => {
         contentRef.current?.scrollIntoView({
-          behavior: "smooth", // Hace que el movimiento sea fluido y no de golpe
-          block: "start",    // Alinea el principio del div con la parte superior de la pantalla
+          behavior: "smooth", 
+          block: "start",    
         });
-      }, 100); // Pequeño delay para asegurar que el elemento ya existe en el DOM
+      }, 100); 
     }
   };
 
@@ -45,11 +44,7 @@ function Plus() {
         </span>
       </button>
 
-      {/* Le asignamos la id "hide" que querías y la ref al contenedor.
-        Nota: Usamos una técnica para que el div exista siempre pero juegue con la opacidad/display,
-        o mantenemos tu renderizado condicional. Al usar el setTimeout de 100ms, nos aseguramos 
-        de que el div ya se ha montado en el DOM antes de buscarlo para el scroll.
-      */}
+    
       {value && (
         <div id="hide" ref={contentRef} className="content-area">
           <h1>Hola sobre mi real</h1>

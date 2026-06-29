@@ -4,51 +4,41 @@
     align-items: center;
     gap: 2rem;
     padding: 2rem;
-    background-color: #1e293b; /* El fondo azul oscuro que venimos usando */
+    background-color: #1e293b;
     border: 1px solid #334155;
     border-radius: 12px;
     max-width: fit-content;
     margin: 2rem auto;
 }
 
-/* Estilos para los enlaces de los iconos */
 .contact-container a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 48px;
     height: 48px;
-    background-color: #0f172a; /* Fondo más oscuro para que contraste */
+    background-color: #0f172a;
     border: 1px solid #334155;
     border-radius: 50%;
     transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
 }
 
-/* CONTROL DE LOS ICONOS SVG OSCUROS */
 .contact-container img {
     width: 24px;
     height: 24px;
     object-fit: contain;
-    
-    /* 🌟 MAGIA: Invierte el color negro original del SVG a blanco puro */
     filter: invert(1); 
-    
-    /* Le damos una opacidad ligera para que combine con el gris #94a3b8 */
     opacity: 0.8; 
     transition: filter 0.3s ease, opacity 0.3s ease;
 }
 
-/* --- EFECTOS HOVER (PASAR EL RATÓN) --- */
 .contact-container a:hover {
     transform: translateY(-4px);
-    border-color: #ef4444; /* Tu color rojo de acento */
+    border-color: #ef4444;
     background-color: #1e293b;
 }
 
 .contact-container a:hover img {
-    /* Al pasar el mouse, hacemos que brille en rojo o vuelva a opacidad total */
     opacity: 1;
-    
-    /* Opcional: Si quieres que el icono se pinte sutilmente de rojo al pasar el ratón */
     filter: invert(33%) sepia(87%) saturate(5418%) hue-rotate(346deg) brightness(98%) contrast(93%);
 }

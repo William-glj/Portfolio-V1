@@ -10,16 +10,17 @@ function Projects() {
             <h2 className="section-subtitle">Proyectos</h2>
             <div className="projects-grid">
                 <a 
-                    href="https://chromewebstore.google.com/?hl=es&pli=1" 
+                    href="https://mportfolioup.netlify.app" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="card-project-link" /* Nueva clase para resetear estilos */
+                    className="card-project-link" 
                 >
                     <ProjectCard 
                         title="Portafolio" 
                         image1={p1} 
                         description="Sitio web personal interactivo desarrollado con React. . ."
-                        fullDescription="Sitio web personal y portafolio interactivo desarrollado con React y CSS modular, diseñado para exponer mi trayectoria, competencias técnicas en el backend y proyectos de forma clara y adaptativa."
+                        fullDescription="Sitio web personal y portafolio interactivo desarrollado con React y
+                         CSS modular, diseñado para exponer mi trayectoria, competencias técnicas en el backend y proyectos de forma clara y adaptativa."
                         showArrow={true}
                     />
                 </a>

@@ -15,18 +15,18 @@ function ProjectCard(props) {
                 </div>
             )}
             
-            {/* Contenedor inferior unificado */}
+          
             <div className="cardProject-footer">
                 {props.description && (
                     <p 
                         className="containerDescription" 
-                        title={props.fullDescription} /* Muestra el texto completo al pasar el ratón */
+                        title={props.fullDescription} 
                     >
                         {props.description}
                     </p>
                 )}
                 
-                {/* La flecha condicional según el prop booleano showArrow */}
+               
                 {props.showArrow && (
                     <span className="project-arrow-wrapper">
                         <svg 

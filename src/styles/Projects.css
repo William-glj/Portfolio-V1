@@ -1,63 +1,38 @@
-/* ==========================================================================
-   1. CONTENEDOR GENERAL DE LA SECCIÓN DE PROYECTOS
-   ========================================================================== */
 .studies-main-container {
-    width: 100%;
-    max-width: 1400px; /* Ancho extendido oficial del portfolio */
+    max-width: 1400px;
     margin: 0 auto;
     padding: 2rem 1rem;
     box-sizing: border-box;
     font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
-/* ==========================================================================
-   2. TÍTULO DE LA SECCIÓN (ALINEACIÓN E INDICADOR ROJO)
-   ========================================================================== */
 .section-subtitle {
     color: #ffffff;
     font-size: 1.5rem;
     margin-top: 0;
     margin-bottom: 2rem;
     font-weight: 600;
-    border-left: 4px solid #ef4444; /* Línea de acento roja a la izquierda */
+    border-left: 4px solid #ef4444;
     padding-left: 0.75rem;
     text-align: left;
 }
 
-/* ==========================================================================
-   3. REJILLA ADAPTATIVA DE TARJETAS (HACE LOS DIVS MÁS CORTOS)
-   ========================================================================== */
 .projects-grid {
     display: grid;
-    /* Divide el espacio en columnas compactas automáticas (mínimo 280px, máximo 360px) */
     grid-template-columns: repeat(auto-fill, minmax(280px, 360px));
-    gap: 2rem; /* Espaciado idéntico entre proyectos */
-    justify-content: flex-start; /* Alineación limpia hacia la izquierda */
-    width: 100%;
+    gap: 2rem;
+    justify-content: flex-start;
 }
 
-/* ==========================================================================
-   4. AJUSTE DE RESPONSIVIDAD PARA TARJETAS INTERNAS
-   ========================================================================== */
 .projects-grid .cardProject-firstContainer {
-    margin: 0 !important; /* Elimina cualquier margen residual que pueda descentrar la rejilla */
-    width: 100% !important; /* Deja que la tarjeta mida exactamente lo que dicte la columna */
+    margin: 0 !important;
+    width: 100% !important;
     max-width: 100% !important;
 }
-/* ==========================================================================
-   RESET DE ENLACES PARA TARJETAS INTERACTIVAS
-   ========================================================================== */
-.card-project-link {
-    text-decoration: none; /* Elimina cualquier subrayado por defecto */
-    color: inherit;        /* Hereda los colores del texto interno de la tarjeta */
-    display: block;        /* Permite que el enlace ocupe todo el cuerpo de la tarjeta */
-    width: 100%;           /* Mantiene las dimensiones de la rejilla */
-    max-width: 360px;      /* Alineado con el tamaño máximo configurado */
-}
 
-.card-project-link:hover,
-.card-project-link:focus,
-.card-project-link:active {
-    text-decoration: none; /* Evita que aparezca el subrayado al pasar el ratón */
-    color: inherit;        /* Evita cambios bruscos de color en el texto */
+.card-project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    max-width: 360px;
 }

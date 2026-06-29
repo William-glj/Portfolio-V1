@@ -3,17 +3,16 @@ function CardExperience(props) {
         <>
         <div className="cardExperience-firstContainer">
             <div className="secondClassCube">
-                {/* Nueva fila flex para obligar al Título y Fecha a estar al mismo nivel */}
+              
                 <div className="secondClassCube-header-row">
                     <h2>{props.company}</h2>
                     <span className="experience-date">{props.period}</span>
                 </div>
                 
-                {/* Solo se renderiza el h3 si existe la prop position */}
                 {props.position && <h3>{props.position}</h3>}
             </div>
 
-            {/* Solo renderiza la lista completa si al menos existe el primer bullet */}
+            
             {props.bullet1 && (
             <ul>
                 <li>{props.bullet1}</li>

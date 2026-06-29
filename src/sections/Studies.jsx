@@ -11,7 +11,7 @@ import "../styles/Studies.css";
 function Studies() { 
     return (
         <div id="Studies" className="studies-main-container">
-            {/* Bloque 1: Estudios Oficiales (Ocupará todo el ancho) */}
+    
             <div className="studies-full-width-section">
                 <h2 className="section-subtitle">Estudios Oficiales</h2>
                 <div className="studies-stack">
@@ -28,7 +28,6 @@ function Studies() {
                 </div>
             </div>
 
-            {/* Bloque 2: Certificaciones (Abajo, ocupando su propia cuadrícula completa) */}
             <div className="projects-section-wrapper">
                 <h2 className="section-subtitle">Certificaciones</h2>
                 <div className="projects-grid"> 
