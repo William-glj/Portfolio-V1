@@ -1,4 +1,4 @@
-import fotoPerfil_1 from '../assets/images/profile.AVIF';
+import fotoPerfil_1 from '../assets/images/profile_1.AVIF';
 import '../styles/Intro.css';
 import Contact from './Contact.jsx';
 
