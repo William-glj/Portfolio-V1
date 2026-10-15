@@ -18,11 +18,11 @@ import sqlIcon from '../assets/icons/sql.svg';
 import vscIcon from '../assets/icons/vscode.svg';
 import wordpressIcon from '../assets/icons/wordpress.svg';
 import xamppIcon from '../assets/icons/xampp.svg';
-
+import aws from '../assets/icons/aws.svg';
 function Skills() {
     return (
-        <div id="Skills">
-            <h2 className="section-subtitle">Habilidades Tecnológicas</h2>
+        <section id="Skills" aria-labelledby="skills-heading">
+            <h2 id="skills-heading" className="section-subtitle">Habilidades tecnológicas</h2>
             <div className="skills-container">
                 <CardSkill 
                     title="Lenguajes" 
@@ -72,9 +72,10 @@ function Skills() {
                     title="Otros" 
                     image1={wordpressIcon} alt1="WordPress" 
                     image2={xamppIcon} alt2="XAMPP" 
+                    image3={aws} alt3="Amazon Web Service" 
                 />  
-            </div>    
-        </div>        
+            </div>
+        </section>
     );
 }
 

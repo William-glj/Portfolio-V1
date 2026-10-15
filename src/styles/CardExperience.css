@@ -1,108 +1,88 @@
-.cardExperience-firstContainer {
-    background-color: #1e293b;
-    border: 1px solid #334155;
-    border-radius: 16px;
-    padding: 2rem;
-    margin: 0 auto 2rem auto;
-    max-width: 850px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+.experience-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  background: linear-gradient(145deg, rgba(21, 31, 48, 0.88), rgba(15, 22, 35, 0.9));
+  transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
 }
 
-.cardExperience-firstContainer:hover {
-    transform: translateY(-4px);
-    border-color: #ef4444;
-    box-shadow: 0 12px 30px rgba(239, 68, 68, 0.1);
+.experience-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(240, 100, 91, 0.48);
 }
 
-.secondClassCube {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    border-bottom: 2px solid #334155;
-    padding-bottom: 1.25rem;
+.experience-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
 }
 
-.secondClassCube-header-row {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 0.5rem;
+.experience-card-heading h3 {
+  margin: 0;
+  color: #f5f7fb;
+  font-size: 1.13rem;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
 }
 
-.secondClassCube h2 {
-    font-size: 1.5rem;
-    color: #ffffff;
-    font-weight: 700;
-    margin: 0;
+.experience-card-heading p {
+  margin: 0.35rem 0 0;
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
 }
 
 .experience-date {
-    font-size: 0.95rem;
-    color: #ef4444;
-    font-weight: 600;
-    white-space: nowrap;
+  align-self: flex-start;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid rgba(240, 100, 91, 0.25);
+  border-radius: 999px;
+  background: rgba(240, 100, 91, 0.08);
+  color: #ff9b94;
+  font-size: 0.75rem;
+  font-weight: 650;
+  line-height: 1.35;
 }
 
-.secondClassCube h3 {
-    font-size: 1.15rem;
-    color: #94a3b8;
-    font-weight: 500;
-    margin: 0;
+.experience-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.cardExperience-firstContainer ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.85rem; 
+.experience-card li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: #bdc7d6;
+  font-size: 0.88rem;
+  line-height: 1.65;
 }
 
-.cardExperience-firstContainer li {
-    font-size: 1rem;
-    color: #cbd5e1;
-    line-height: 1.6;
-    position: relative;
-    padding-left: 1.5rem;
+.experience-card li::before {
+  position: absolute;
+  top: 0.1rem;
+  left: 0;
+  color: var(--color-accent);
+  content: "•";
 }
 
-.cardExperience-firstContainer li::before {
-    content: "▹";
-    position: absolute;
-    left: 0;
-    color: #ef4444;
-    font-weight: bold;
-}
+@media (min-width: 700px) {
+  .experience-card-header {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
 
-@media (min-width: 768px) {
-    .secondClassCube-header-row {
-        flex-direction: row;
-        align-items: center;
-        gap: 1.5rem;
-    }
-}
-
-@media (min-width: 900px) {
-    .experience-equal-height {
-        grid-template-columns: 1fr 1fr !important; 
-    }
-    
-    .experience-equal-height .studies-column {
-        height: 100%;
-    }
-
-    .experience-equal-height .cardExperience-firstContainer {
-        height: 100%;
-    }
-    
-    .experience-equal-height .cardExperience-firstContainer ul {
-        flex-grow: 1;
-    }
+  .experience-date {
+    flex: 0 0 auto;
+  }
 }

@@ -4,34 +4,30 @@ import Contact from './Contact.jsx';
 
 function Intro() {
     return (
-        <main id="Intro" className="intro-container">
+        <section id="Intro" className="intro-container" aria-labelledby="intro-heading">
             <div className="intro-wrapper">
-                <h2 className="section-subtitle">Presentación</h2>
+                <p className="section-subtitle">Presentación</p>
                 
-                <div className="intro-card cardExperience-firstContainer">
+                <div className="intro-card">
                     <div className="spacer">
                         <div className="profileDiv">
-                            <img id="Profile" src={fotoPerfil_1} alt="Imagen de perfil" />
+                            <img id="Profile" src={fotoPerfil_1} alt="Guillermo Lemos Jiménez" />
                         </div>
                         
                         <div className="textDiv">
-                            <h1>FullStack Developer</h1>
-                            <h4>Guillermo Lemos Jiménez</h4>
+                            <p className="intro-role">Desarrollador Full Stack</p>
+                            <h1 id="intro-heading">Guillermo Lemos Jiménez</h1>
                             <p className="intro-description">
-                              Buenas, soy Guillermo, pragamador Full Stack centrado en el desarrollo Backend. Mi fuerte es el lenguaje de Java
-                               y el entorno de Spring Boot. Trabajo con arquitecturas monolíticas y microservicios,
-                                además de gestionar bases de datos relacionales y APIs con operaciones CRUD.
-
-                                No me dedico solo a la parte lógica del servidor;
-                                también me sumerjo en la creación de interfaces con React y JavaScript en el Frontend.
-                                Esto me permite conectar perfectamente el back con el front,
-                                integrando soluciones de extremo a extremo con interfaces dinámicas.
+                              Soy Guillermo, desarrollador Full Stack con enfoque en backend y experiencia con Java y Spring Boot.
+                              He trabajado con arquitecturas monolíticas y de microservicios, bases de datos relacionales y APIs REST.
+                              También desarrollo interfaces con React y JavaScript, conectando la lógica del servidor con experiencias
+                              web dinámicas.
                             </p>
                         </div>
                     </div>
                   <div className="intro-footer-row">
                         <div className="footer-block">
-                            <h3>Tech Stack</h3>
+                            <h3>Tecnologías principales</h3>
                             <div className="stack-horizontal-box">
                                 <p>Java</p>
                                 <p>React</p>
@@ -48,7 +44,7 @@ function Intro() {
 
                 </div>
             </div>
-        </main>
+        </section>
     );
 }
 

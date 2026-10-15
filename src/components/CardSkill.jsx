@@ -2,26 +2,25 @@ import "../styles/CardSkill.css";
 
 
 function CardSkill(props) {
+    const skills = Array.from({ length: 9 }, (_, index) => {
+        const number = index + 1;
+        return {
+            image: props[`image${number}`],
+            alt: props[`alt${number}`],
+        };
+    }).filter((skill) => skill.image);
+
     return (
-     
-        <div className="cardSkill-firstContainer">
-            <div className="secondClassCube">
-                <h2>{props.title}</h2>
+        <article className="skill-card">
+            <div className="skill-card-header">
+                <h3>{props.title}</h3>
             </div>
-            <div className="containerSVG">
-            {props.image1 && <img src={props.image1} alt={props.description}/>}
-            {props.image2 && <img src={props.image2} alt={props.description}/>}
-            {props.image3 && <img src={props.image3} alt={props.description}/>}
-            {props.image4 && <img src={props.image4} alt={props.description}/>}
-            {props.image5 && <img src={props.image5} alt={props.description}/>}
-            {props.image6 && <img src={props.image6} alt={props.description}/>}
-            {props.image7 && <img src={props.image7} alt={props.description}/>}
-            {props.image8 && <img src={props.image8} alt={props.description}/>}
-            {props.image9 && <img src={props.image9} alt={props.description}/>}
+            <div className="skill-icons">
+                {skills.map(({ image, alt }) => (
+                    <img key={alt} src={image} alt={alt || ""} loading="lazy" />
+                ))}
             </div>
-        </div>
-       
-        
+        </article>
     );
 }
 

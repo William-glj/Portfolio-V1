@@ -1,35 +1,18 @@
-import React from 'react';
-
-function ProjectCard(props) {
+function ProjectCard({ title, image1, imageAlt = "", description, showArrow = false }) {
     return (
-        <div className="cardProject-firstContainer">
-            {props.title && (
-                <div className="secondClassCube">
-                    <h2>{props.title}</h2>
+        <article className="project-card">
+            {title && <h3 className="project-card-title">{title}</h3>}
+            {image1 && (
+                <div className="project-image">
+                    <img src={image1} alt={imageAlt || title || description || ""} loading="lazy" />
                 </div>
             )}
-            
-            {props.image1 && (
-                <div className="containerIMG">
-                    <img src={props.image1} alt={props.title}/>
-                </div>
-            )}
-            
-          
-            <div className="cardProject-footer">
-                {props.description && (
-                    <p 
-                        className="containerDescription" 
-                        title={props.fullDescription} 
-                    >
-                        {props.description}
-                    </p>
-                )}
-                
-               
-                {props.showArrow && (
+            <div className="project-card-footer">
+                {description && <p>{description}</p>}
+                {showArrow && (
                     <span className="project-arrow-wrapper">
-                        <svg 
+                        <svg
+                            aria-hidden="true"
                             className="project-arrow" 
                             xmlns="http://www.w3.org/2000/svg" 
                             fill="none" 
@@ -42,7 +25,7 @@ function ProjectCard(props) {
                     </span>
                 )}
             </div>
-        </div>
+        </article>
     );
 }
 
